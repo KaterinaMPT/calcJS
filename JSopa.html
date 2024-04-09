@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Калькулятор 3000!!!!!!</p>
+     <script>
+        function plus(a,b) 
+        {
+            return (a + b);
+        }
+
+        function minus(a,b) 
+        {
+            return (a - b);
+        }
+
+        function umnoj(a,b) 
+        {
+            return (a * b);
+        }
+
+        function podel(a,b) 
+        {
+            return (a / b);
+        }
+
+        function schitat()
+        {
+            var chis1 = Number(document.getElementById("chis1").value);
+            var oper = document.getElementById("op").value;
+            var chis2 = Number(document.getElementById("chis2").value);
+            var result;
+
+            switch (oper)
+            {
+                case '+':
+                    result = plus(chis1, chis2);
+                    break;
+                case '-':
+                    result = minus(chis1, chis2);
+                    break;
+
+                case '*':
+                    result = umnoj(chis1, chis2);
+                    break;
+
+                case ':':
+                    if (chis1 != 0 && chis2 !=0)
+                    {
+                        result = podel(chis1, chis2);
+                        break;
+                    }
+                    else
+                    {
+                        result = "Ноль уберите";
+                        break;
+                    }
+                default:
+                    result = "Хз....";
+                    break;
+            
+            }
+            document.getElementById("resul").value = result;
+        }
+     </script>
+
+    <input type="text" id="chis1" value="">
+
+     <select id="op">
+        <option>Выберите операцию</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value=":">:</option>
+    </select>
+        
+    <input type="text" id="chis2" value="">
+    <input type="button" onClick="schitat();" value="=">
+    <input type="text" id="resul" value="">
+</body>
+</html>
